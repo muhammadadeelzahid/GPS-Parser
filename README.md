@@ -1,11 +1,11 @@
 # GPS Parser Library
 
-This project implements a library for parsing GPS data in NMEA format (specifically the GGA packet) using the ESP-IDF v5.0 stable framework for ESP32 microcontrollers. The library provides functions to validate the checksum of the GPS packet and extract individual parameters such as time, latitude, and longitude.
+This project implements a library for parsing GPS data in NMEA format (specifically the GGA packet) using the ESP-IDF v5.0 stable framework for ESP32 microcontrollers. The library provides functions to validate the checksum of the GPS packet and extract individual parameters such as time, latitude, and longitude etc.
 
 ## Features
 
 - Validate the checksum of the GPS packet for integrity verification.
-- Extract individual parameters (time, latitude, and longitude) from the GGA packet.
+- Extract individual parameters from the GGA packet.
 - Handle empty or malformed packets gracefully.
 - Store the extracted GPS data parameters in a structured format using a `GPSData` struct.
 
