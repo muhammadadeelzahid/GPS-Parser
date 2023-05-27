@@ -18,9 +18,8 @@ This project implements a library for parsing GPS data in NMEA format (specifica
 5. This project was also tested with ESP-IDF v5.0.
    - To properly link gps_parser.c with your CMake Project, make sure to include it as a source file in the SRCS list in the innermost CMakeList.txt
    - Open your CMakeLists.txt file in a text editor.
-   - Locate the `idf_component_register` command.
-   - Inside the `idf_component_register` command, find the `SRCS` variable declaration.
-   - Add `"gps_parser.c"` to the `SRCS` list, ensuring it is enclosed in double quotation marks.
+   - Locate the `idf_component_register` command and find the `SRCS` variable declaration.
+   - Add `"gps_parser.c"` to the `SRCS` list.
    - Verify that the file path provided matches the actual location of `gps_parser.c` in your project directory structure.
    - Here's an example of how the modified line would look:
 ```cmake
