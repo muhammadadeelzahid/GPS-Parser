@@ -34,8 +34,9 @@ idf_component_register(SRCS "hello_world_main.c"
 2. Call the `validate_checksum` function to check the integrity of the GPS packet.
 3. If the checksum is valid, call the `parse_gps_data` function to extract the individual parameters.
 4. Access the extracted GPS data from the `GPSData` struct fields.
-
-Refer to the example in the `hello_world_main.c` file for a usage demonstration.
+5. Refer to the example in the `hello_world_main.c` file for a usage demonstration.
+6. Find above "ESP IDF v5.0 Build result.png" file which shows build results with ESP-IDF v5.0
+7. Find above "Usage Example.png" which shows output of the test main file "hello_world_main.c" 
 
 
 
