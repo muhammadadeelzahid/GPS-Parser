@@ -37,12 +37,5 @@ idf_component_register(SRCS "hello_world_main.c"
 
 Refer to the example in the `hello_world_main.c` file for a usage demonstration.
 
-##Results
-
-<h2> Build using ESP IDF v5.0 </h2>
-![image](https://github.com/muhammadadeelzahid/GPS-Parser/assets/47818499/cba545ab-5329-4015-8ac0-a489f5e106ff)
-
-<h2> Parser output message </h2>
-![image](https://github.com/muhammadadeelzahid/GPS-Parser/assets/47818499/165349bd-583c-4613-abaf-40d4523646ad)
 
 
