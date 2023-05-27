@@ -1,6 +1,6 @@
 # GPS Parser Library
 
-This project implements a library for parsing GPS data in NMEA format (specifically the GGA packet) using the ESP-IDF v5.0 stable framework for ESP32 microcontrollers. The library provides functions to validate the checksum of the GPS packet and extract individual parameters such as time, latitude, and longitude etc.
+This project implements a library for parsing GPS data in NMEA format (specifically the GGA packet) using the ESP-IDF v5.0 stable framework for ESP32 microcontrollers. The library provides functions to validate the checksum of the GPS packet and extract individual parameters such as time, latitude, and longitude, etc.
 
 ## Features
 
@@ -15,6 +15,13 @@ This project implements a library for parsing GPS data in NMEA format (specifica
 2. Include the `gps_parser.h` header file in your project.
 3. Implement the functions in the `gps_parser.c` source file.
 4. Compile and link the code with the ESP-IDF framework or you can use any C compiler to test its functionality.
+5. This project was also tested with ESP-IDF v5.0 by running build on the project.
+   - For `gps_parser.c` to properly link with your CMake Project, add the following line in your innermost CMakeLists.txt:
+     ```cmake
+     idf_component_register(SRCS "hello_world_main.c"
+                            "gps_parser.c"
+                            INCLUDE_DIRS "")
+     ```
 
 ## Usage
 
@@ -23,5 +30,4 @@ This project implements a library for parsing GPS data in NMEA format (specifica
 3. If the checksum is valid, call the `parse_gps_data` function to extract the individual parameters.
 4. Access the extracted GPS data from the `GPSData` struct fields.
 
-Refer to the example in the `main.c` file for a usage demonstration.
-
+Refer to the example in the `hello_world_main.c` file for a usage demonstration.
