@@ -15,14 +15,19 @@ This project implements a library for parsing GPS data in NMEA format (specifica
 2. Include the `gps_parser.h` header file in your project.
 3. Implement the functions in the `gps_parser.c` source file.
 4. Compile and link the code with the ESP-IDF framework or you can use any C compiler to test its functionality.
-5. This project was also tested with ESP-IDF v5.0 by running build on the project.
-   - For `gps_parser.c` to properly link with your CMake Project, add the following line in your innermost CMakeLists.txt:
-     ```cmake
-     idf_component_register(SRCS "hello_world_main.c"
-                            "gps_parser.c"
-                            INCLUDE_DIRS "")
-     ```
-
+5. This project was also tested with ESP-IDF v5.0.
+   - To properly link gps_parser.c with your CMake Project, make sure to include it as a source file in the SRCS list in the innermost CMakeList.txt
+   - Open your CMakeLists.txt file in a text editor.
+   - Locate the `idf_component_register` command.
+   - Inside the `idf_component_register` command, find the `SRCS` variable declaration.
+   - Add `"gps_parser.c"` to the `SRCS` list, ensuring it is enclosed in double quotation marks.
+   - Verify that the file path provided matches the actual location of `gps_parser.c` in your project directory structure.
+   - Here's an example of how the modified line would look:
+```cmake
+idf_component_register(SRCS "hello_world_main.c"
+                             "gps_parser.c"
+                              INCLUDE_DIRS "")
+ ```   
 ## Usage
 
 1. Create an instance of the `GPSData` struct to store the parsed GPS data.
@@ -31,3 +36,13 @@ This project implements a library for parsing GPS data in NMEA format (specifica
 4. Access the extracted GPS data from the `GPSData` struct fields.
 
 Refer to the example in the `hello_world_main.c` file for a usage demonstration.
+
+##Results
+
+<h2> Build using ESP IDF v5.0 </h2>
+![image](https://github.com/muhammadadeelzahid/GPS-Parser/assets/47818499/cba545ab-5329-4015-8ac0-a489f5e106ff)
+
+<h2> Parser output message </h2>
+![image](https://github.com/muhammadadeelzahid/GPS-Parser/assets/47818499/165349bd-583c-4613-abaf-40d4523646ad)
+
+
