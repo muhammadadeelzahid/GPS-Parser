@@ -3,19 +3,24 @@
 
 #include <stdbool.h>
 #include <stdio.h>
+
 #define MAX_PACKET_LENGTH 128
 
 typedef struct {
-    char t[11]; // Time
-    char latitude[10]; // Latitude
-    char latitude_direction[2]; // Latitude direction (N/S)
-    char longitude[11]; // Longitude
-    char longitude_direction[2]; // Longitude direction (E/W)
-    char fix_quality[2]; // Fix quality
-    char num_satellites[3]; // Number of satellites
-    char hdop[5]; // Horizontal Dilution of Precision (HDOP)
-    char altitude[8]; // Altitude
-    char height_geoid[8]; // Height of Geoid above WGS84 ellipsoid
+    char time[10];
+    float latitude;
+    char latitude_dir;
+    float longitude;
+    char longitude_dir;
+    int fix_quality;
+    int num_satellites;
+    float hdop;
+    float altitude;
+    char altitude_dir;
+    float geoid_height;
+    char geoid_height_dir;
+    float time_since_dgps_update;
+    char checksum[10];
 } GPSData;
 
 bool validate_checksum(const char *packet);
