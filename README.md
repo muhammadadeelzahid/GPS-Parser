@@ -1,41 +1,53 @@
-# GPS Parser Library
+| Supported Targets | ESP32 | ESP32-C2 | ESP32-C3 | ESP32-S2 | ESP32-S3 |
+| ----------------- | ----- | -------- | -------- | -------- | -------- |
 
-This project implements a library for parsing GPS data in NMEA format (specifically the GGA packet) using the ESP-IDF v5.0 stable framework for ESP32 microcontrollers. The library provides functions to validate the checksum of the GPS packet and extract individual parameters such as time, latitude, and longitude, etc.
+# Hello World Example
 
-## Features
+Starts a FreeRTOS task to print "Hello World".
 
-- Validate the checksum of the GPS packet for integrity verification.
-- Extract individual parameters from the GGA packet.
-- Handle empty or malformed packets gracefully.
-- Store the extracted GPS data parameters in a structured format using a `GPSData` struct.
+(See the README.md file in the upper level 'examples' directory for more information about examples.)
 
-## Installation
+## How to use example
 
-1. Clone the repository or download the source code.
-2. Include the `gps_parser.h` header file in your project.
-3. Implement the functions in the `gps_parser.c` source file.
-4. Compile and link the code with the ESP-IDF framework or you can use any C compiler to test its functionality.
-5. This project was also tested with ESP-IDF v5.0.
-   - To properly link gps_parser.c with your CMake Project, make sure to include it as a source file in the SRCS list in the innermost CMakeList.txt
-   - Open your CMakeLists.txt file in a text editor.
-   - Locate the `idf_component_register` command and find the `SRCS` variable declaration.
-   - Add `"gps_parser.c"` to the `SRCS` list.
-   - Verify that the file path provided matches the actual location of `gps_parser.c` in your project directory structure.
-   - Here's an example of how the modified line would look:
-```cmake
-idf_component_register(SRCS "hello_world_main.c"
-                             "gps_parser.c"
-                              INCLUDE_DIRS "")
- ```   
-## Usage
+Follow detailed instructions provided specifically for this example. 
 
-1. Create an instance of the `GPSData` struct to store the parsed GPS data.
-2. Call the `validate_checksum` function to check the integrity of the GPS packet.
-3. If the checksum is valid, call the `parse_gps_data` function to extract the individual parameters.
-4. Access the extracted GPS data from the `GPSData` struct fields.
-5. Refer to the example in the `hello_world_main.c` file for a usage demonstration.
-6. Find above `ESP IDF v5.0 Build result.png` file which shows build results with ESP-IDF v5.0
-7. Find above `Usage Example.png` which shows output of the test main file "hello_world_main.c" 
+Select the instructions depending on Espressif chip installed on your development board:
+
+- [ESP32 Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/stable/get-started/index.html)
+- [ESP32-S2 Getting Started Guide](https://docs.espressif.com/projects/esp-idf/en/latest/esp32s2/get-started/index.html)
 
 
+## Example folder contents
 
+The project **hello_world** contains one source file in C language [hello_world_main.c](main/hello_world_main.c). The file is located in folder [main](main).
+
+ESP-IDF projects are built using CMake. The project build configuration is contained in `CMakeLists.txt` files that provide set of directives and instructions describing the project's source files and targets (executable, library, or both). 
+
+Below is short explanation of remaining files in the project folder.
+
+```
+├── CMakeLists.txt
+├── pytest_hello_world.py      Python script used for automated testing
+├── main
+│   ├── CMakeLists.txt
+│   └── hello_world_main.c
+└── README.md                  This is the file you are currently reading
+```
+
+For more information on structure and contents of ESP-IDF projects, please refer to Section [Build System](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/build-system.html) of the ESP-IDF Programming Guide.
+
+## Troubleshooting
+
+* Program upload failure
+
+    * Hardware connection is not correct: run `idf.py -p PORT monitor`, and reboot your board to see if there are any output logs.
+    * The baud rate for downloading is too high: lower your baud rate in the `menuconfig` menu, and try again.
+
+## Technical support and feedback
+
+Please use the following feedback channels:
+
+* For technical queries, go to the [esp32.com](https://esp32.com/) forum
+* For a feature request or bug report, create a [GitHub issue](https://github.com/espressif/esp-idf/issues)
+
+We will get back to you as soon as possible.
