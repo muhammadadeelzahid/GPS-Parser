@@ -1,4 +1,4 @@
-# ESP32 GPS Library
+# ESP32 GPS-Parser Library
 
 This library provides a simple and efficient way to parse GPS data in NMEA format (NMEA 0183) using the ESP-IDF v5.0 stable framework for ESP32 microcontrollers.
 
