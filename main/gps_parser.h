@@ -3,6 +3,12 @@
 
 #include <stdbool.h>
 #include <stdio.h>
+/* If you're using with Arduino IDE or C++ compiler
+#ifdef __cplusplus
+ extern "C" {
+#endif
+*/
+
 
 #define MAX_PACKET_LENGTH 128
 
@@ -26,4 +32,8 @@ typedef struct {
 bool validate_checksum(const char *packet);
 void parse_gps_data(const char *packet, GPSData *gpsData);
 
+/* If you're using with Arduino IDE or C++ compiler
+#ifdef __cplusplus
+}
+*/
 #endif  // GPS_PARSER_H
